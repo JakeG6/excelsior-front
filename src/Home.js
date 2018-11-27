@@ -78,6 +78,7 @@ class Home extends Component {
 
   }
   
+  //handle the submit
   handleSubmit(event) {
     console.log(`the response objects: ${this.state.searchResults}`);
     
