@@ -1,0 +1,123 @@
+
+
+.abilities-list {
+    display:flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+}
+
+.black {
+    background-color: black;
+}
+
+
+.card {
+    width: 50em;
+    max-width:90%;
+    margin: 0 auto;
+    border: solid 15px white;
+    border-radius: 25px;
+    margin-top: 1em;
+    margin-bottom: 1.5em;
+    background-image: url("https://www.transparenttextures.com/patterns/carbon-fibre.png");
+
+}
+
+.cardBottom {
+    justify-content: space-between;
+    
+}
+
+.column {
+    flex-direction: column;
+}
+
+.row {
+    display: flex;
+    flex-direction: row;
+
+}
+
+.marvel {
+    background-color: #e00034;
+    color: white;
+
+    
+}
+
+.dc {
+    background-color: #0376f2;
+    color: white;
+}
+
+.company-logo {
+    
+    margin: 0 auto;
+    max-height: 200px;
+    max-width: 200px;
+}
+
+
+
+.charImage {
+    max-width: 50%;
+    max-height: 40em;
+}
+
+
+.cardTop {
+    display: flex; 
+    justify-content: flex-start;
+}
+
+.cardTop2 {
+    display:flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+}
+
+.cardTop img {
+    padding: 1em;
+}
+
+.cardTop h1 {
+    text-align: center;
+}
+
+.cardTop div {
+    width: 100%;
+}
+
+.cardTop p {
+    margin-top: 0;
+    margin-bottom: 0;
+}
+
+.cardMid {
+    display: flex;
+    
+}
+
+.text-align-left {
+    text-align:left;
+}
+
+.description {
+padding: 1em;
+}
+
+.indy {
+    background-color: grey;
+    color:white;
+}
+
+
+.team-list {
+    display:flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+}
+
+
+
+
