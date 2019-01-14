@@ -1,0 +1,28 @@
+.addchar {
+    color: white;
+    background-color: grey;
+    background-image: url("https://www.transparenttextures.com/patterns/concrete-wall-2.png");
+}
+
+.row {
+    display: flex;
+    flex-direction: row;
+}
+
+.addchar h1 {
+    margin-top: 0;
+}
+
+.column {
+    flex-direction: column;
+}
+
+.addchar input, .addchar textarea {
+    width: 100%;
+}
+
+
+.page-center {
+    display: flex;
+    justify-content: center;
+}

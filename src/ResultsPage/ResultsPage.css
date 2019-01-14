@@ -10,7 +10,6 @@
     background-color: black;
 }
 
-
 .card {
     width: 50em;
     max-width:90%;
@@ -20,6 +19,9 @@
     margin-top: 1em;
     margin-bottom: 1.5em;
     background-image: url("https://www.transparenttextures.com/patterns/carbon-fibre.png");
+    -webkit-box-shadow: 3px 4px 14px 0px rgba(0,0,0,0.75);
+    -moz-box-shadow: 3px 4px 14px 0px rgba(0,0,0,0.75);
+    box-shadow: 3px 4px 14px 0px rgba(0,0,0,0.75);
 
 }
 
@@ -29,7 +31,13 @@
 }
 
 .column {
+    display: flex;
     flex-direction: column;
+}
+
+.description {
+    max-width: 50%;
+    margin: 0 auto;
 }
 
 .row {
@@ -41,8 +49,6 @@
 .marvel {
     background-color: #e00034;
     color: white;
-
-    
 }
 
 .dc {
@@ -52,7 +58,6 @@
 
 .company-logo {
     
-    margin: 0 auto;
     max-height: 200px;
     max-width: 200px;
 }
@@ -60,14 +65,14 @@
 
 
 .charImage {
-    max-width: 50%;
-    max-height: 40em;
+    width: 400px;
+    height: 400px;
 }
 
 
 .cardTop {
-    display: flex; 
-    justify-content: flex-start;
+    /* display: flex;  */
+    /* justify-content: flex-start; */
 }
 
 .cardTop2 {
@@ -111,11 +116,27 @@ padding: 1em;
     color:white;
 }
 
+.logoBar {
+    display:flex;
+    align-items: center;
+    justify-content:center;
+    width: 50%;
+   
+}
+
 
 .team-list {
     display:flex;
     flex-direction: column;
     flex-wrap: wrap;
+}
+
+.sorry-message {
+    color: white;
+    background-color: black;
+    width: 50%;
+    margin: 1em auto;
+    
 }
 
 
