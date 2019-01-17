@@ -1,33 +1,36 @@
 import React, { Component } from 'react';
+import Popup from 'reactjs-popup';
 import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 import ResultsPage from "./ResultsPage/ResultsPage.js";
-//import Results from 'Results';
 import axios from 'axios';
 import "./Search.css";
 
-
-
 class Search extends Component {
 
-  constructor(props) {
+    constructor(props) {
 
-    super(props);
-    this.state = {
-      apiURL: '',
-      name: '',
-      civName: '',
-      alignment: '',
-      team: '',
-      ability: '',
-      company: '',
-      searchResults: [],
-      searchedOnce: false
+        super(props);
+        this.state = {
+        apiURL: '',
+        name: '',
+        civName: '',
+        alignment: '',
+        team: '',
+        ability: '',
+        company: '',
+        //check this 
+        searchResults: [],
+        searchedOnce: false,
+
+        username: '',
+        password: '',
+        
+        }
+
+        this.handleSubmit = this.handleSubmit.bind(this);
+        this.buildQuery = this.buildQuery.bind(this);
+
     }
-
-    this.handleSubmit = this.handleSubmit.bind(this);
-    this.buildQuery = this.buildQuery.bind(this);
-
-  }
   
     buildQuery() {
 
@@ -98,8 +101,37 @@ class Search extends Component {
             <div className="App">
                 <div className="searchbar">
                     <div className="link-bar">
-                        <Link to="/upload">CREATE A CHARACTER</Link>
-                        <Link to="#">LOG OUT</Link>
+                        {
+                        this.props.isAuthed ? 
+                                    <div>
+                                        <Link to="/upload">CREATE A CHARACTER</Link>
+                                        <p to="#" onClick={this.props.handleLogout}>LOG OUT</p>
+                                    </div>
+                                    : 
+                                <div>
+                                    <Popup trigger={<p>LOG IN</p>} modal closeOnDocumentClick >
+                                        {close => (
+                                            <div className="modal">
+                                                <a className="close" onClick={() => {close()}}>
+                                                    &times;
+                                                </a>
+                                                <form onSubmit={() => { this.props.handleLogin(this.state.username, this.state.password)}}  >
+                                                    <label>
+                                                        Username
+                                                        <input type="text" value={this.state.username} onChange={ event => this.setState({ username: event.target.value })} />
+                                                    </label>
+                                                    <label>
+                                                        Password
+                                                        <input type="text" value={this.state.password} onChange={ event => this.setState({ password: event.target.value })} />
+                                                    </label>
+                                                    <input type="submit" value="LOG IN" />
+                                                </form>
+                                            </div>
+                                        )}
+                                    </Popup>
+                                </div>    
+                            }
+
                     </div>
                     <div className="logo">
                         <h1>EXCELSIOR</h1>
@@ -129,8 +161,10 @@ class Search extends Component {
                         </label>
                         <input type="submit" value="SUBMIT" />
                     </form>
-                </div>   
-                <ResultsPage searchResults={this.state.searchResults} searchedOnce={this.state.searchedOnce}/>
+                </div>
+                <div className="circuit-background">   
+                    <ResultsPage searchResults={this.state.searchResults} searchedOnce={this.state.searchedOnce}/>
+                </div>
             </div>
         );
     }

@@ -1,5 +1,3 @@
-
-
 .searchbar {
     padding: 0 1em 1em 1em;
     color: white;
@@ -29,7 +27,7 @@
     align-items: center;
 }
 
-input, select {
+.search-form input, .search-form select {
     margin-left: 1em;
 }
 
@@ -54,7 +52,6 @@ select {
     padding: 16px 20px;
     height: 3em;
     font-size: 1em;
-
     border: none;
     outline: none;
     border-radius: 4px;
@@ -86,13 +83,71 @@ input[type = submit]:hover {
 
 }
 
-.link-bar a {
+.link-bar p {
     margin-right: 1em;
     text-decoration: underline;
     color: black;
 }
 
-.link-bar a:hover {
+.link-bar p:hover {
     text-shadow: 0 0 .65px #333, 0 0 .65px #333;
-    
+    cursor: pointer;
 }
+
+.modal > .close {
+    cursor: pointer;
+    display: block;
+    padding: 2px 5px;
+    line-height: 20px;
+    font-size: 40px;
+    font-weight: bold;
+    text-align: right;
+  }
+
+  .modal {
+    color: white;
+    background-color: blue;
+    background-image: url("https://www.transparenttextures.com/patterns/concrete-wall-2.png");
+    flex-direction: column;
+  }
+
+  .modal .close {
+    cursor: pointer;
+    position: absolute;
+    display: block;
+    padding: 2px 5px;
+    line-height: 20px;
+    right: 10px;
+    top: 10px;
+    font-size: 40px;
+    border-radius: 18px;
+  
+  }
+
+  .modal .close:hover {
+    color: black;
+  }
+
+  .modal form {
+        padding-top: 1.5em;
+        font-weight: bold;
+        display: flex;
+        flex-direction: column;
+  }
+
+
+
+  .modal input {
+      margin: 1em 1em;
+  }
+
+  .modal input[type = submit] {
+      width: 17em;
+    margin: 0 auto 1em auto;  }
+
+  .modal > .actions {
+    width: 100%;
+    padding: 10px 5px;
+    margin: auto;
+    text-align: center;
+  }

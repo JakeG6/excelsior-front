@@ -1,7 +1,12 @@
 .addchar {
     color: white;
-    background-color: grey;
+    background-color: #757575;
     background-image: url("https://www.transparenttextures.com/patterns/concrete-wall-2.png");
+}
+
+.addchar-header {
+    text-align: center;
+    margin-bottom: 0;
 }
 
 .row {

@@ -1,36 +1,99 @@
 import React, { Component } from 'react';
-import { BrowserRouter as Router, Route, Link } from "react-router-dom";
-import { library } from '@fortawesome/fontawesome-svg-core';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { BrowserRouter as Router, Route, Link, } from "react-router-dom";
 import Search from './Search.js';
 import AddChar from './AddChar/AddChar.js';
-//import ResultsPage from './ResultsPage.js';
+import UploadConfirmation from './UploadConfirmation/UploadConfirmation.js';
 import './App.css';
-
 
 class App extends Component {
 
   constructor(props) {
     super(props);
+    this.state = {
+      authorized: false
+    }
 
+    this.handleLogin = this.handleLogin.bind(this);
+    this.handleLogout = this.handleLogout.bind(this);
+    this.rememberAuthorization = this.rememberAuthorization.bind(this);
+  }
+
+  rememberAuthorization() {
+    
+      // if the key exists in localStorage
+      if (localStorage.hasOwnProperty("authorized")) {
+        // get the key's value from localStorage
+        let value = localStorage.getItem("authorized");
+
+        // parse the localStorage string and setState
+        try {
+          value = JSON.parse(value);
+          this.setState({ authorized: value });
+        } catch (e) {
+          // handle empty string
+          this.setState({ authorized: value });
+        }
+      }
+    
+  }
+
+  handleLogin(username, password) {
+    if (username == "admin" && password == "dapassword") {
+      console.log(this.state.authorized)
+      this.setState({ authorized: true }, () => {
+        console.log(this.state.authorized)
+        localStorage.setItem("authorized", JSON.stringify(this.state.authorized))
+
+      })
+
+    }
+    else {
+      console.log("access denied")
+    }
+     
+  }
+
+  handleLogout() {
+    this.setState({authorized: false}, () => {
+      //console.log(this.state.authorized)
+      localStorage.setItem("authorized", JSON.stringify(this.state.authorized))
+      
+    })
+  }
+
+  componentDidMount() {
+    this.rememberAuthorization();
   }
 
   render() {
+
+    
+
     return (
       <Router>
-        
         <div>
-        <div className="app">          
-          <div className="portfolioBar">
-            <div className="arrowContainer">
-              <a href="#"><i className="fas fa-arrow-left fa-3x"></i></a>
-            </div>
-          </div>  
-        </div>
-         
-          <Route exact path="/" component={Search} />
-          <Route exact path="/upload" component={AddChar} />
-          
+          <div className="app">          
+            <div className="portfolioBar">
+              <div className="arrowContainer">
+                <a href="#"><i className="fas fa-arrow-left fa-3x"></i></a>
+              </div>
+            </div>  
+          </div>
+      <Route 
+        exact path='/' render={(props) => 
+         <Search isAuthed={this.state.authorized} handleLogout={this.handleLogout} handleLogin={this.handleLogin} {...props} />
+      }
+      />
+      <Route 
+        exact path='/upload' render={(props) => 
+         <AddChar isAuthed={this.state.authorized} handleLogout={this.handleLogout} handleLogin={this.handleLogin} {...props} />
+      }
+      />
+      <Route 
+        exact path='/upload/success' render={(props) => 
+         <UploadConfirmation isAuthed={this.state.authorized} handleLogout={this.handleLogout} handleLogin={this.handleLogin} {...props} />
+        }
+      />
         </div>
       </Router>
     );

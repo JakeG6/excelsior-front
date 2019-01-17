@@ -57,61 +57,79 @@ class ResultsPage extends Component {
             }
             
         }
-    
-        return (
-            <div className="resultsPage">
-                {   
-                    this.props.searchResults.map((char) => {
-                        return (
-                            <div className={cardStylePicker(char.company)}>
-                                <div className="cardTop">
-                                    <div className="row">
-                                        <img className="charImage" src={(char.imageURL) ? char.imageURL : noImageFound} />
-                                        <div className="column">
-                                            <h1>{char.name.toUpperCase()}</h1>
-                                            <div className="cardTop2">
-                                                <div>
-                                                    <b>Name: </b>
-                                                    <p>{char.civName}</p>
-                                                </div>
-                                                <div>
-                                                    <b>Debut: </b>
-                                                    <p>{char.firstDebut}</p>
-                                                </div>
-                                            </div>                                   
+
+        if(this.props.searchedOnce) {
+            if (this.props.searchResults.length > 0) {
+                return (
+                    
+                    <div className="resultsPage full-area circuit-background">
+                        
+                        {   
+                            this.props.searchResults.map((char) => {
+                                return (
+                                    <div className={cardStylePicker(char.company)}>
+                                        <div className="cardTop">
                                             <div className="row">
+                                                <img className="charImage" src={(char.imageURL) ? char.imageURL : noImageFound} />
                                                 <div className="column">
-                                                    <h2 className="text-align-left">ABILITIES</h2>
-                                                    <ul className="abilities-list">
-                                                    {char.abilities.map(ability => {
-                                                        return (<li className="text-align-left word-wrap">{ability}</li>)
-                                                    })}
-                                                    </ul>
+                                                    <h1>{char.name.toUpperCase()}</h1>
+                                                    <div className="cardTop2">
+                                                        <div>
+                                                            <b>Name: </b>
+                                                            <p>{char.civName}</p>
+                                                        </div>
+                                                        <div>
+                                                            <b>Debut: </b>
+                                                            <p>{char.firstDebut}</p>
+                                                        </div>
+                                                    </div>                                   
+                                                    <div className="row">
+                                                        <div className="column">
+                                                            <h2 className="text-align-left">ABILITIES</h2>
+                                                            <ul className="abilities-list">
+                                                            {char.abilities.map(ability => {
+                                                                return (<li className="text-align-left word-wrap">{ability}</li>)
+                                                            })}
+                                                            </ul>
+                                                        </div>
+                                                        <div className="column ">
+                                                            <h2 className="text-align-left">TEAMS</h2>
+                                                            <ul className="team-list">
+                                                            {char.teams.map(team => {
+                                                                return (<li className="text-align-left word-wrap">{team}</li>)
+                                                            })}
+                                                            </ul>
+                                                        </div >
+                                                    </div>
                                                 </div>
-                                                <div className="column ">
-                                                    <h2 className="text-align-left">TEAMS</h2>
-                                                    <ul className="team-list">
-                                                    {char.teams.map(team => {
-                                                        return (<li className="text-align-left word-wrap">{team}</li>)
-                                                    })}
-                                                    </ul>
-                                                </div >
-                                            </div>
-                                        </div>
-                                    </div>                                 
-                                    <div className="cardBottom row">
-                                        <p className="description"><i>{char.desc}</i></p>
-                                        <div className="logo-bar">
-                                            <img className="company-logo" src={logoPicker(char.company)} alt="Logo"/>         
-                                        </div>                   
-                                    </div> 
-                                </div>                           
-                            </div>
-                        )
-                    })
-                }    
-            </div>     
-        )     
+                                            </div>                                 
+                                            <div className="cardBottom row">
+                                                <p className="description"><i>{char.desc}</i></p>
+                                                <div className="logo-bar">
+                                                    <img className="company-logo" src={logoPicker(char.company)} alt="Logo"/>         
+                                                </div>                   
+                                            </div> 
+                                        </div>                           
+                                    </div>
+                                )
+                            })
+                        }    
+                    </div>     
+                )
+            }
+            else {
+                return (
+                    <div><h1 className="sorry-message full-area circuit-background">Sorry, but your search didn't find any results.</h1></div>
+                )
+            }
+        }
+        else {
+            return (
+                <div className="full-area circuit-background"></div>
+            )
+        }
+    
+             
     }
 }
 
