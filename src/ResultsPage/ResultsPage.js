@@ -69,7 +69,7 @@ class ResultsPage extends Component {
                         {   
                             this.props.searchResults.map((char) => {
                                 return (
-                                    <Grid container spacing={16} justify="center">
+                                    <Grid container justify="center">
                                         <Grid item lg={8}>
                                             <div className={cardStylePicker(char.company)}>
                                                 <Grid container>
