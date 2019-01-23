@@ -17,19 +17,11 @@
     margin-bottom: 1em;
 }
 
-
-.search-form {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around;
-    margin: 0 auto;
-    width: 100%;
-    align-items: center;
+.searchbar .label {
+    margin: 1em;
 }
 
-.search-form input, .search-form select {
-    margin-left: 1em;
-}
+
 
 input {
     height: 2.5em;
@@ -38,23 +30,30 @@ input {
     background-color:lightgrey;
     border: 3px solid transparent;
     outline: none;
+    margin: 1em;
 }
 
+
 textarea {
+    margin: 1em;
     border-radius: 4px;
+    height: 2.5em;
     font-size: 1em;
     background-color:lightgrey;
     border: 3px solid transparent;
     outline: none;
+    resize: none;
 }
 
 select {
     padding: 16px 20px;
     height: 3em;
+    width: 11em;
     font-size: 1em;
     border: none;
     outline: none;
     border-radius: 4px;
+    margin: 1em;
     background-color: lightgrey;
   }
 
@@ -74,25 +73,20 @@ input[type = submit]:hover {
 }
 
 .link-bar {
-    display: flex;
-    justify-content: flex-end;
-    flex-direction: row;
     background-color: #757575;
     background-image: url("https://www.transparenttextures.com/patterns/concrete-wall-2.png");
-    padding-top: .5em;
-
 }
 
-.link-bar p {
-    margin-right: 1em;
-    text-decoration: underline;
-    color: black;
+a {
+    text-decoration: none;
+    color:white;
 }
 
-.link-bar p:hover {
-    text-shadow: 0 0 .65px #333, 0 0 .65px #333;
-    cursor: pointer;
+.logo {
+    margin-top: 1em;
 }
+
+/* Modal */
 
 .modal > .close {
     cursor: pointer;

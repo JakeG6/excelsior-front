@@ -1,4 +1,7 @@
 import React, { Component } from 'react';
+import Button from '@material-ui/core/Button';
+import Grid from '@material-ui/core/Grid';
+
 import Popup from 'reactjs-popup';
 import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 import ResultsPage from "./ResultsPage/ResultsPage.js";
@@ -100,66 +103,77 @@ class Search extends Component {
         return (
             <div className="App">
                 <div className="searchbar">
-                    <div className="link-bar">
-                        {
-                        this.props.isAuthed ? 
-                                    <div>
-                                        <Link to="/upload">CREATE A CHARACTER</Link>
-                                        <p to="#" onClick={this.props.handleLogout}>LOG OUT</p>
+                    {
+                    this.props.isAuthed ? 
+                        <div>
+                            <Grid className="link-bar" container spacing={24} justify="flex-end">
+                                <Grid item xl={1}>
+                                    <Button variant="contained" color="primary"><Link to="/upload">CREATE A CHARACTER</Link></Button>
+                                </Grid>
+                                <Grid item xl={1}>
+                                    <Button variant="contained" color="primary" onClick={this.props.handleLogout}>LOG OUT</Button>
+                                </Grid>
+                            </Grid>
+                        </div>
+                        : 
+                        <div>
+                        <Grid className="link-bar" container spacing={24} justify="flex-end">
+                            <Grid item sm={1}>
+                                <Popup trigger={<Button variant="contained" color="primary">LOG IN</Button>} modal closeOnDocumentClick >
+                                {close => (
+                                    <div className="modal">
+                                        <a className="close" onClick={() => {close()}}>
+                                            &times;
+                                        </a>
+                                        <form onSubmit={() => { this.props.handleLogin(this.state.username, this.state.password)}}  >
+                                            <label>
+                                                Username
+                                                <input type="text" value={this.state.username} onChange={ event => this.setState({ username: event.target.value })} />
+                                            </label>
+                                            <label>
+                                                Password
+                                                <input type="text" value={this.state.password} onChange={ event => this.setState({ password: event.target.value })} />
+                                            </label>
+                                            <input type="submit" value="LOG IN" />
+                                        </form>
                                     </div>
-                                    : 
-                                <div>
-                                    <Popup trigger={<p>LOG IN</p>} modal closeOnDocumentClick >
-                                        {close => (
-                                            <div className="modal">
-                                                <a className="close" onClick={() => {close()}}>
-                                                    &times;
-                                                </a>
-                                                <form onSubmit={() => { this.props.handleLogin(this.state.username, this.state.password)}}  >
-                                                    <label>
-                                                        Username
-                                                        <input type="text" value={this.state.username} onChange={ event => this.setState({ username: event.target.value })} />
-                                                    </label>
-                                                    <label>
-                                                        Password
-                                                        <input type="text" value={this.state.password} onChange={ event => this.setState({ password: event.target.value })} />
-                                                    </label>
-                                                    <input type="submit" value="LOG IN" />
-                                                </form>
-                                            </div>
-                                        )}
-                                    </Popup>
-                                </div>    
-                            }
-
-                    </div>
+                                )}
+                                </Popup>
+                            </Grid>
+                        </Grid>    
+                    </div>    
+                    }
                     <div className="logo">
                         <h1>EXCELSIOR</h1>
                         <h2>The Superhero Database</h2>
                     </div>
                     <form className="search-form" onSubmit={this.handleSubmit}>
-                        <label>
-                            Name
-                            <input  type="text" value={this.state.name} onChange={ event => this.setState({ name: event.target.value })} />
-                        </label>
-                        <label>
-                            Alignment
-                            <select onChange={event => this.setState({ alignment: event.target.value })}>
-                                <option value="">-</option>
-                                <option value="Hero">Hero</option>
-                                <option value="Villain">Villain</option>
-                                <option value="Antihero">Antihero</option>
-                            </select>
-                        </label>
-                        <label>
-                            Team
-                            <input type="text" value={this.state.team} onChange={ event => this.setState({ team: event.target.value })} />
-                        </label>
-                        <label>
-                            Company
-                            <input type="text" value={this.state.company} onChange={ event => this.setState({ company: event.target.value })} />
-                        </label>
-                        <input type="submit" value="SUBMIT" />
+                        <Grid container spacing={8} alignItems="center" justify="center" direction="row"> 
+                            <Grid item lg={2}>
+                            <label>Name</label>
+                                <input  type="text" value={this.state.name} onChange={ event => this.setState({ name: event.target.value })} />
+                            </Grid>
+                            <Grid item lg={2}>
+                                <label>Alignment</label>
+                                <select onChange={event => this.setState({ alignment: event.target.value })}>
+                                    <option value="">-</option>
+                                    <option value="Hero">Hero</option>
+                                    <option value="Villain">Villain</option>
+                                    <option value="Antihero">Antihero</option>
+                                </select>
+                            </Grid>
+                            <Grid item lg={2}>
+                                <label>Team</label>
+                                <input type="text" value={this.state.team} onChange={ event => this.setState({ team: event.target.value })} />
+                            </Grid>
+                            <Grid item lg={2}>
+                                <label>Company</label>
+                                <input type="text" value={this.state.company} onChange={ event => this.setState({ company: event.target.value })} />
+                            </Grid>
+                            <Grid item xl={2}>
+                                <input type="submit" value="SUBMIT" />
+                            </Grid>
+                        </Grid>
                     </form>
                 </div>
                 <div className="circuit-background">   

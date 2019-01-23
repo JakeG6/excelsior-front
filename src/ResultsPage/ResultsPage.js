@@ -1,4 +1,6 @@
 import React, { Component } from 'react';
+import Grid from '@material-ui/core/Grid';
+
 import marvelLogo from'./marvel-logo.png';
 import DCLogo from'./DC-logo.png';
 import imageLogo from './image-logo.png';
@@ -67,50 +69,61 @@ class ResultsPage extends Component {
                         {   
                             this.props.searchResults.map((char) => {
                                 return (
-                                    <div className={cardStylePicker(char.company)}>
-                                        <div className="cardTop">
-                                            <div className="row">
-                                                <img className="charImage" src={(char.imageURL) ? char.imageURL : noImageFound} />
-                                                <div className="column">
-                                                    <h1>{char.name.toUpperCase()}</h1>
-                                                    <div className="cardTop2">
-                                                        <div>
-                                                            <b>Name: </b>
-                                                            <p>{char.civName}</p>
-                                                        </div>
-                                                        <div>
-                                                            <b>Debut: </b>
-                                                            <p>{char.firstDebut}</p>
-                                                        </div>
-                                                    </div>                                   
-                                                    <div className="row">
-                                                        <div className="column">
-                                                            <h2 className="text-align-left">ABILITIES</h2>
-                                                            <ul className="abilities-list">
-                                                            {char.abilities.map(ability => {
-                                                                return (<li className="text-align-left word-wrap">{ability}</li>)
-                                                            })}
-                                                            </ul>
-                                                        </div>
-                                                        <div className="column ">
-                                                            <h2 className="text-align-left">TEAMS</h2>
-                                                            <ul className="team-list">
-                                                            {char.teams.map(team => {
-                                                                return (<li className="text-align-left word-wrap">{team}</li>)
-                                                            })}
-                                                            </ul>
-                                                        </div >
-                                                    </div>
-                                                </div>
-                                            </div>                                 
-                                            <div className="cardBottom row">
-                                                <p className="description"><i>{char.desc}</i></p>
-                                                <div className="logo-bar">
-                                                    <img className="company-logo" src={logoPicker(char.company)} alt="Logo"/>         
-                                                </div>                   
-                                            </div> 
-                                        </div>                           
-                                    </div>
+                                    <Grid container spacing={16} justify="center">
+                                        <Grid item lg={8}>
+                                            <div className={cardStylePicker(char.company)}>
+                                                <Grid container>
+                                                    <Grid item md={6} xs={12}>
+                                                        <img className="charImage" src={(char.imageURL) ? char.imageURL : noImageFound} />
+                                                    </Grid>
+                                                    <Grid item md={6} xs={12} justify="center">
+                                                        <h1>{char.name.toUpperCase()}</h1>
+                                                        <Grid container>
+                                                            <Grid item xs={6}>
+                                                                <b>Name: </b>
+                                                                <p>{char.civName}</p>
+                                                            </Grid>
+                                                            <Grid item xs={6}>
+                                                                <b>Debut: </b>
+                                                                <p>{char.firstDebut}</p>
+                                                            </Grid>
+                                                        </Grid>
+                                                        <Grid container>
+                                                            <Grid item xs={6}>
+                                                                <h2>ABILITIES</h2>
+                                                                <ul className="abilities-list">
+                                                                {char.abilities.map(ability => {
+                                                                    return (<li className="text-align-left word-wrap">{ability}</li>)
+                                                                })}
+                                                                </ul>
+                                                            </Grid>
+                                                            <Grid item xs={6}>
+                                                                <h2 className="text-align-left">TEAMS</h2>
+                                                                <ul className="team-list">
+                                                                {char.teams.map(team => {
+                                                                    return (<li className="text-align-left word-wrap">{team}</li>)
+                                                                })}
+                                                                </ul>
+                                                            </Grid>
+                                                    </Grid>
+                                                </Grid>
+                                                <Grid container>
+                                                    <Grid item md={6}>
+                                                        <p className="description"><i>{char.desc}</i></p>
+                                                    </Grid>
+                                                    <Grid item md={6} xs={12} justify="center">
+                                                        <img className="company-logo" src={logoPicker(char.company)} alt="Logo"/>            
+                                                    </Grid>
+                                                     
+                                                </Grid>
+                                            </Grid>
+                                     
+                                            </div>                      
+                                        </Grid>
+                                        
+                                    </Grid>
+                                    
+                                    
                                 )
                             })
                         }    
@@ -119,13 +132,15 @@ class ResultsPage extends Component {
             }
             else {
                 return (
-                    <div><h1 className="sorry-message full-area circuit-background">Sorry, but your search didn't find any results.</h1></div>
+                    <div className="resultsPage full-area circuit-background">
+                    <h1 className="sorry-message">Sorry, but your search didn't find any results.</h1>
+                    </div>
                 )
             }
         }
         else {
             return (
-                <div className="full-area circuit-background"></div>
+                <div className="resultsPage full-area circuit-background"></div>
             )
         }
     
