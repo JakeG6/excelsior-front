@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { BrowserRouter as Router, Route, Link, } from "react-router-dom";
+import { BrowserRouter as Router, Route } from "react-router-dom";
 import Search from './Search.js';
 import AddChar from './AddChar/AddChar.js';
 import UploadConfirmation from './UploadConfirmation/UploadConfirmation.js';
@@ -10,7 +10,7 @@ class App extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      authorized: false
+      authorized: false,
     }
 
     this.handleLogin = this.handleLogin.bind(this);
@@ -38,7 +38,7 @@ class App extends Component {
   }
 
   handleLogin(username, password) {
-    if (username == "admin" && password == "dapassword") {
+    if (username === "admin" && password === "dapassword") {
       console.log(this.state.authorized)
       this.setState({ authorized: true }, () => {
         console.log(this.state.authorized)
@@ -58,6 +58,8 @@ class App extends Component {
       //console.log(this.state.authorized)
       localStorage.setItem("authorized", JSON.stringify(this.state.authorized))
       console.log(this.state.authorized)
+      //this.props.history.push("/");
+
     })
   }
 
@@ -79,21 +81,21 @@ class App extends Component {
               </div>
             </div>  
           </div>
-      <Route 
-        exact path='/' render={(props) => 
-         <Search isAuthed={this.state.authorized} handleLogout={this.handleLogout} handleLogin={this.handleLogin} {...props} />
-      }
-      />
-      <Route 
-        exact path='/upload' render={(props) => 
-         <AddChar isAuthed={this.state.authorized} handleLogout={this.handleLogout} handleLogin={this.handleLogin} {...props} />
-      }
-      />
-      <Route 
-        exact path='/upload/success' render={(props) => 
-         <UploadConfirmation isAuthed={this.state.authorized} handleLogout={this.handleLogout} handleLogin={this.handleLogin} {...props} />
-        }
-      />
+          <Route 
+            exact path='/' render={(props) => 
+            <Search isAuthed={this.state.authorized} handleLogout={this.handleLogout} handleLogin={this.handleLogin} {...props} />
+          }
+          />
+          <Route 
+            exact path='/upload' render={(props) => 
+            <AddChar isAuthed={this.state.authorized} handleLogout={this.handleLogout} handleLogin={this.handleLogin} {...props} />
+          }
+          />
+          <Route 
+            exact path='/upload/success' render={(props) => 
+            <UploadConfirmation isAuthed={this.state.authorized} handleLogout={this.handleLogout} handleLogin={this.handleLogin} {...props} />
+            }
+          />
         </div>
       </Router>
     );

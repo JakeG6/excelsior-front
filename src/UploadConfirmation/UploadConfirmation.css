@@ -1,13 +1,14 @@
 .confirmation-message {
-    color: black;
+    color: white;
+    background-color: #757575;
+    background-image: url("https://www.transparenttextures.com/patterns/concrete-wall-2.png");
+
     text-align: center;
     
     
 }
 
 .confirmation-page {
-    background-color: #757575;
-    background-image: url("https://www.transparenttextures.com/patterns/concrete-wall-2.png");
     height: 1000px;
     width: 1000px;
 }

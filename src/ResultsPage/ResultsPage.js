@@ -20,8 +20,8 @@ class ResultsPage extends Component {
 
         function cardStylePicker(company) {
 
-            switch(company) {
-                case "Marvel":
+            switch(company.toUpperCase()) {
+                case "MARVEL":
                     return "card marvel";
                     break;
                 case "DC":
@@ -35,20 +35,20 @@ class ResultsPage extends Component {
 
         function logoPicker(company) {
             
-            switch(company) {
-                case "Marvel":
+            switch(company.toUpperCase()) {
+                case "MARVEL":
                     return marvelLogo;
                     break;
                 case "DC":
                     return DCLogo;
                     break;
-                case "Image":
+                case "IMAGE":
                     return imageLogo;
                     break;
-                case "Valiant":
+                case "VALIANT":
                     return valiantLogo;
                     break;
-                case "Dark Horse":
+                case "DARK HORSE":
                     return darkHorseLogo;
                     break;
                 case "IDW":

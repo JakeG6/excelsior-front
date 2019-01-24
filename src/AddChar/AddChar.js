@@ -66,28 +66,6 @@ class AddChar extends Component {
       this.setState({formSubmitted: true});
     }
 
-    // componentDidUpdate() {
-            
-    //     let charProperties = [
-    //         this.state.name,
-    //         this.state.civName,
-    //         this.state.firstDebut,
-    //         this.state.alignment,
-    //         this.state.teams,
-    //         this.state.abilities,
-    //         this.state.company,
-    //         this.state.imageURL,
-    //         this.state.desc
-    //     ];
-        
-    //     let isFilledOut = (charProperty) => {
-    //         return charProperty;
-    //     }
-
-    //     if (charProperties.every(isFilledOut)) {
-    //         this.setState({readyToSubmit: true})
-    //     }
-    // }
     
     render() {
 
@@ -135,7 +113,9 @@ class AddChar extends Component {
             }
         }
 
-        let loggedIn = localStorage.getItem("authorized");
+        let loggedIn = this.props.isAuthed
+        //localStorage.getItem("authorized");
+        console.log(`the loggedIn is ${true}`);
 
         if (this.state.formSubmitted == true) {
             return (<Redirect to="/upload/success" />)
@@ -148,7 +128,7 @@ class AddChar extends Component {
                             <Button variant="contained" color="primary"><Link to="/">SEARCH</Link></Button>
                         </Grid>
                         <Grid item lg={1}>
-                            <Button variant="contained" color="primary" onClick={this.props.handleLogout}>LOG OUT</Button>
+                            <Button variant="contained" color="primary" onClick={this.props.handleLogout}><Link to="/">LOG OUT</Link></Button>
                         </Grid>
                     </Grid>
                     <h1 className="addchar-header">Character Upload</h1>
@@ -262,6 +242,7 @@ class AddChar extends Component {
                 </div>              
             );
         } else {
+            console.log(`you're being redirected the loggedIn is ${loggedIn}`)
             return (<Redirect to="/" />) }
   
     }
