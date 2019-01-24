@@ -2,15 +2,43 @@
     color: white;
     background-color: #757575;
     background-image: url("https://www.transparenttextures.com/patterns/concrete-wall-2.png");
+    padding-bottom: 2em;
+}
+
+.custom-card .charImage {
+    margin-top: 1em;
+}
+
+.abilities, .teams {
+    text-align:center;
+}
+
+.custom-card ul {
+    margin-top: 0;
+}
+
+.addchar p {
+    margin-bottom: 0;
+}
+
+.cardTop2 p {
+    margin-top: 1em;
+    margin-bottom: 1em;
+}
+
+.custom-card b {
+    margin: 1em auto;
+}
+
+.card-container {
+    width: 50%;
 }
 
 .addchar h1 {
     text-align: center;
 }
 
-.addchar p {
-    margin-bottom: 0;
-}
+
 
 .green {
     background-color: green;
@@ -25,6 +53,26 @@
     max-width: 75%;
     flex-wrap: wrap;
     margin: 0 auto 1em auto;
+}
+
+.flex {
+    display: flex;
+}
+
+.cardTop2 {
+    display:flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+}
+
+.column {
+    display: flex;
+    flex-direction: column;
+}
+
+.row {
+    display:flex;
+    flex-direction: row;
 }
 
 .form-item {
@@ -46,6 +94,10 @@
     width: 175px;
     height: 3em;
     margin-bottom: 0;
+}
+
+.addchar select {
+    width: 183px;
 }
 
 
@@ -99,6 +151,32 @@
 
 }
 
+@media(max-width: 1023px) {
+    .custom-card {
+        display:none;
+    }
+}
+
+.abilities-list {
+    display:flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+}
+
+.image-container {
+    display: flex;
+    justify-content: center;
+}
+
+
+.text-center {
+    text-align: center;
+}
+
+.card-top {
+    justify-content: space-around;
+}
+
 @media(max-width: 414px){
     .form-item {
         width: 100%;
@@ -113,6 +191,11 @@
 
 }
 
+.logo-bar {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
 
 
 
@@ -124,12 +207,16 @@
 .custom-card {
     border: solid 15px white;
     border-radius: 25px;
+    padding-bottom: 1em;
     margin: 0 auto;
     background-image: url("https://www.transparenttextures.com/patterns/carbon-fibre.png");
     -webkit-box-shadow: 3px 4px 14px 0px rgba(0,0,0,0.75);
     -moz-box-shadow: 3px 4px 14px 0px rgba(0,0,0,0.75);
     box-shadow: 3px 4px 14px 0px rgba(0,0,0,0.75);
-    
-    max-width: 75%;
+    width: 990px;
+}
+
+.custom-card h1 {
+    text-align: center;
 }
 

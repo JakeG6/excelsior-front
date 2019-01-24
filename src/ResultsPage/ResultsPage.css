@@ -37,16 +37,14 @@
 
 .cardTop img {
     /* padding: 1em; */
+
 }
 
 .cardTop h1 {
     text-align: center;
 }
 
-.cardTop p {
-    margin-top: 0;
-    margin-bottom: 0;
-}
+
 
 .description {
 padding: 1em;

@@ -33,7 +33,6 @@ input {
     margin: 1em;
 }
 
-
 textarea {
     margin: 1em;
     border-radius: 4px;
@@ -128,8 +127,6 @@ a {
         display: flex;
         flex-direction: column;
   }
-
-
 
   .modal input {
       margin: 1em 1em;

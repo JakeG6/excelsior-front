@@ -57,7 +57,7 @@ class App extends Component {
     this.setState({authorized: false}, () => {
       //console.log(this.state.authorized)
       localStorage.setItem("authorized", JSON.stringify(this.state.authorized))
-      
+      console.log(this.state.authorized)
     })
   }
 

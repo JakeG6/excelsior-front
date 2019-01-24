@@ -52,7 +52,6 @@ class AddChar extends Component {
             }).then((response) => {
                 // handle success
                 console.log(response);
-                console.log('good post');
             })
             .catch( (error) => {
                 // handle error
@@ -143,15 +142,15 @@ class AddChar extends Component {
         }
         else if (loggedIn) {
             return (
-                <div className="addchar">
-                    {/* <Grid container spacing={24} justify="flex-end">
+                <div className="addchar" style={{padding: 12}}>
+                    <Grid container spacing={24} justify="flex-end">
                         <Grid item lg={1}>
                             <Button variant="contained" color="primary"><Link to="/">SEARCH</Link></Button>
                         </Grid>
                         <Grid item lg={1}>
                             <Button variant="contained" color="primary" onClick={this.props.handleLogout}>LOG OUT</Button>
                         </Grid>
-                    </Grid> */}
+                    </Grid>
                     <h1 className="addchar-header">Character Upload</h1>
                     <form onSubmit={this.handleSubmit}>
                         <div className="form-container ">
@@ -212,38 +211,54 @@ class AddChar extends Component {
                     
                     </form>   
                     <div className={cardStylePicker(this.state.company)}>
-                            
-                        <img className="charImage" src={(this.state.imageURL) ? this.state.imageURL : noImageFound} />
-                    
-                        <h1>{this.state.name ? this.state.name.toUpperCase() : "CHARACTER NAME"}</h1>
-                            
-                                <b>Name: </b>
-                                <p>{this.state.civName}</p>
-                            
-                                <b>Debut: </b>
-                                <p>{this.state.firstDebut}</p>
-                            
-                                <h2 className="text-align-left">ABILITIES</h2>
-                                <ul className="abilities-list">
-                                {this.state.abilities.map(ability => {
-                                    return (<li className="text-align-left word-wrap">{ability}</li>)
-                                })}
-                                </ul>
-                            
-                                <h2 className="text-align-left">TEAMS</h2>
-                                <ul className="team-list">
-                                {this.state.teams.map(team => {
-                                    return (<li className="text-align-left word-wrap">{team}</li>)
-                                })}
-                                </ul>
-                            
-                        <p className="description"><i>{this.state.desc}</i></p>
-                    
-                    
-                        { this.state.company ? <img className="company-logo" src={logoPicker(this.state.company)} alt="Logo"/> : <div></div> }            
-                            
-                    </div>                      
-                                         
+                            <div className="cardTop">
+                                <div className="row">
+                                    <div className="card-container image-container">
+                                        <img className="charImage" src={(this.state.imageURL) ? this.state.imageURL : noImageFound} />
+                                    </div>
+                                    <div className="column card-container">
+                                        <h1>{this.state.name ? this.state.name.toUpperCase() : "CHARACTER NAME"}</h1>
+                                        <div className="cardTop2">
+                                            <div className="text-center card-container">
+                                                <b>Name: </b>
+                                                <p>{this.state.civName}</p>
+                                            </div>
+                                            <div className="text-center card-container">
+                                                <b>Debut: </b>
+                                                <p>{this.state.firstDebut}</p>
+                                            </div>
+                                        </div>                                   
+                                        <div className="row">
+                                            <div className="column card-container abilities">
+                                                <h2 className="text-center">ABILITIES</h2>
+                                                <ul className="abilities-list">
+                                                    {this.state.abilities.map(ability => {
+                                                        return (<li className="text-align-left word-wrap">{ability}</li>)
+                                                    })}
+                                                </ul>
+                                            </div>
+                                            <div className="column card-container teams">
+                                                <h2 className="text-center">TEAMS</h2>
+                                                <ul className="team-list">
+                                                {this.state.teams.map(team => {
+                                                    return (<li className="text-align-left word-wrap">{team}</li>)
+                                                })}
+                                                </ul>
+                                            </div >
+                                        </div>
+                                    </div>
+                                </div>                                 
+                                <div className="cardBottom row">
+                                    <div className="card-container text-center">
+                                        <p className="description"><i>{this.state.desc ? this.state.desc : "This is where the character's description or biograpy will go. Put all pertinent information here."}</i></p>
+                                    </div>
+                                    <div className="logo-bar card-container">
+                                        {this.state.company ?
+                                        <img className="company-logo" src={logoPicker(this.state.company)} alt="Logo"/> : <div></div>}       
+                                    </div>              
+                                </div> 
+                            </div>                           
+                        </div>                                 
                 </div>              
             );
         } else {

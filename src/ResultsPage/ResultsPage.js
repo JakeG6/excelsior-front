@@ -91,7 +91,7 @@ class ResultsPage extends Component {
                                                         <Grid container>
                                                             <Grid item xs={6}>
                                                                 <h2>ABILITIES</h2>
-                                                                <ul className="abilities-list">
+                                                                <ul>
                                                                 {char.abilities.map(ability => {
                                                                     return (<li className="text-align-left word-wrap">{ability}</li>)
                                                                 })}
