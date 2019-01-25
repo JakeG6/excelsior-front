@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { BrowserRouter as Redirect } from "react-router-dom";
+import { Redirect } from "react-router-dom";
 import "./UploadConfirmation.css";
 
 
@@ -23,11 +23,12 @@ class UploadConfirmation extends Component {
     }
     
     render() {
+       
         if (this.props.isAuthed) {
             return (
                 this.state.redirect ? <Redirect to="/" />
                 :   
-                <div classname="confirmation-page">
+                <div className="confirmation-page">
                     <div className="confirmation-message">
                         <h1>SUCCESS!</h1>
                         <h2>A NEW CHARACTER HAS BEEN ADDED TO THE DATABASE</h2>

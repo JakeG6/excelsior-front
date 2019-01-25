@@ -67,23 +67,23 @@ class Search extends Component {
             }
         }
 
-        console.log(`the search query is ${searchQuery}!`);
-        console.log(this.state.searchedOnce)
+        //console.log(`the search query is ${searchQuery}!`);
+        //console.log(this.state.searchedOnce)
         
         this.setState({apiURL: searchQuery},() => {
         
             axios.get(this.state.apiURL).then((response) => {
                 // handle success
-                console.log(response);
+                //console.log(response);
                 this.setState({searchResults: response.data, searchedOnce: true}, () => {
                     // console.log(this.state.searchResults);
 
-                        console.log(this.state.searchedOnce)
+                        //console.log(this.state.searchedOnce)
                 });
             } )
             .catch( (error) => {
                 // handle error
-                console.log(error);
+                //console.log(error);
             })
             .then( () =>  {
                 // always executed

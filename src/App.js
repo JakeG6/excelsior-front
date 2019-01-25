@@ -39,16 +39,16 @@ class App extends Component {
 
   handleLogin(username, password) {
     if (username === "admin" && password === "dapassword") {
-      console.log(this.state.authorized)
+      //console.log(this.state.authorized)
       this.setState({ authorized: true }, () => {
-        console.log(this.state.authorized)
+        //console.log(this.state.authorized)
         localStorage.setItem("authorized", JSON.stringify(this.state.authorized))
 
       })
 
     }
     else {
-      console.log("access denied")
+      //console.log("access denied")
     }
      
   }
@@ -57,7 +57,7 @@ class App extends Component {
     this.setState({authorized: false}, () => {
       //console.log(this.state.authorized)
       localStorage.setItem("authorized", JSON.stringify(this.state.authorized))
-      console.log(this.state.authorized)
+      //console.log(this.state.authorized)
       //this.props.history.push("/");
 
     })

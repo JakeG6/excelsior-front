@@ -51,11 +51,11 @@ class AddChar extends Component {
 
             }).then((response) => {
                 // handle success
-                console.log(response);
+                //console.log(response);
             })
             .catch( (error) => {
                 // handle error
-                console.log(error);
+                //console.log(error);
             });            
         }
     
@@ -113,14 +113,14 @@ class AddChar extends Component {
             }
         }
 
-        let loggedIn = this.props.isAuthed
-        //localStorage.getItem("authorized");
-        console.log(`the loggedIn is ${true}`);
+        let loggedIn = localStorage.getItem("authorized");
+        //console.log(`the loggedIn is ${loggedIn}`);
+        //console.log(typeof loggedIn)
 
         if (this.state.formSubmitted == true) {
             return (<Redirect to="/upload/success" />)
         }
-        else if (loggedIn) {
+        else if (loggedIn === 'true') {
             return (
                 <div className="addchar" style={{padding: 12}}>
                     <Grid container spacing={24} justify="flex-end">
@@ -187,8 +187,6 @@ class AddChar extends Component {
                             </div>
 
                         </div>
-                        
-                    
                     </form>   
                     <div className={cardStylePicker(this.state.company)}>
                             <div className="cardTop">
@@ -242,7 +240,7 @@ class AddChar extends Component {
                 </div>              
             );
         } else {
-            console.log(`you're being redirected the loggedIn is ${loggedIn}`)
+            //console.log(`you're being redirected the loggedIn is ${loggedIn}`)
             return (<Redirect to="/" />) }
   
     }
