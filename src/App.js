@@ -11,6 +11,7 @@ class App extends Component {
     super(props);
     this.state = {
       authorized: false,
+      attemptMessage: ''
     }
 
     this.handleLogin = this.handleLogin.bind(this);
@@ -40,14 +41,16 @@ class App extends Component {
   handleLogin(username, password) {
     if (username === "admin" && password === "dapassword") {
       //console.log(this.state.authorized)
-      this.setState({ authorized: true }, () => {
+      this.setState({ authorized: true, attemptMessage:'' }, () => {
         //console.log(this.state.authorized)
         localStorage.setItem("authorized", JSON.stringify(this.state.authorized))
+        //close()
 
       })
 
     }
     else {
+      this.setState({attemptMessage: 'ACCESS DENIED: User not recognized'})
       //console.log("access denied")
     }
      
@@ -83,7 +86,7 @@ class App extends Component {
           </div>
           <Route 
             exact path='/' render={(props) => 
-            <Search isAuthed={this.state.authorized} handleLogout={this.handleLogout} handleLogin={this.handleLogin} {...props} />
+            <Search isAuthed={this.state.authorized} attemptMessage={this.state.attemptMessage} handleLogout={this.handleLogout} handleLogin={this.handleLogin} {...props} />
           }
           />
           <Route 

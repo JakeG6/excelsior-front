@@ -125,7 +125,8 @@ class Search extends Component {
                                         <a className="close" onClick={() => {close()}}>
                                             &times;
                                         </a>
-                                        <form onSubmit={() => { this.props.handleLogin(this.state.username, this.state.password)}}  >
+                                        <form onSubmit={() => {this.props.handleLogin(this.state.username, this.state.password)}}  >
+                                            {/* <p>{this.props.attemptMessage}</p> */}
                                             <label>
                                                 Username
                                                 <input type="text" value={this.state.username} onChange={ event => this.setState({ username: event.target.value })} />

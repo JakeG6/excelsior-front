@@ -29,7 +29,8 @@ class AddChar extends Component {
         imageURL:'',
         desc: '',
         formSubmitted: false,
-        readyToSubmit: false
+        readyToSubmit: false,
+        attemptMessage: ''
       }
   
       this.handleSubmit = this.handleSubmit.bind(this);
@@ -189,54 +190,54 @@ class AddChar extends Component {
                         </div>
                     </form>   
                     <div className={cardStylePicker(this.state.company)}>
-                            <div className="cardTop">
-                                <div className="row">
-                                    <div className="card-container image-container">
-                                        <img className="charImage" src={(this.state.imageURL) ? this.state.imageURL : noImageFound} />
-                                    </div>
-                                    <div className="column card-container">
-                                        <h1>{this.state.name ? this.state.name.toUpperCase() : "CHARACTER NAME"}</h1>
-                                        <div className="cardTop2">
-                                            <div className="text-center card-container">
-                                                <b>Name: </b>
-                                                <p>{this.state.civName}</p>
-                                            </div>
-                                            <div className="text-center card-container">
-                                                <b>Debut: </b>
-                                                <p>{this.state.firstDebut}</p>
-                                            </div>
-                                        </div>                                   
-                                        <div className="row">
-                                            <div className="column card-container abilities">
-                                                <h2 className="text-center">ABILITIES</h2>
-                                                <ul className="abilities-list">
-                                                    {this.state.abilities.map(ability => {
-                                                        return (<li className="text-align-left word-wrap">{ability}</li>)
-                                                    })}
-                                                </ul>
-                                            </div>
-                                            <div className="column card-container teams">
-                                                <h2 className="text-center">TEAMS</h2>
-                                                <ul className="team-list">
-                                                {this.state.teams.map(team => {
-                                                    return (<li className="text-align-left word-wrap">{team}</li>)
-                                                })}
-                                                </ul>
-                                            </div >
+                        <div className="cardTop">
+                            <div className="row">
+                                <div className="card-container image-container">
+                                    <img className="charImage" src={(this.state.imageURL) ? this.state.imageURL : noImageFound} />
+                                </div>
+                                <div className="column card-container">
+                                    <h1>{this.state.name ? this.state.name.toUpperCase() : "CHARACTER NAME"}</h1>
+                                    <div className="cardTop2">
+                                        <div className="text-center card-container">
+                                            <b>Name: </b>
+                                            <p>{this.state.civName}</p>
                                         </div>
+                                        <div className="text-center card-container">
+                                            <b>Debut: </b>
+                                            <p>{this.state.firstDebut}</p>
+                                        </div>
+                                    </div>                                   
+                                    <div className="row">
+                                        <div className="column card-container abilities">
+                                            <h2 className="text-center">ABILITIES</h2>
+                                            <ul className="abilities-list">
+                                                {this.state.abilities.map(ability => {
+                                                    return (<li className="text-align-left word-wrap">{ability}</li>)
+                                                })}
+                                            </ul>
+                                        </div>
+                                        <div className="column card-container teams">
+                                            <h2 className="text-center">TEAMS</h2>
+                                            <ul className="team-list">
+                                            {this.state.teams.map(team => {
+                                                return (<li className="text-align-left word-wrap">{team}</li>)
+                                            })}
+                                            </ul>
+                                        </div >
                                     </div>
-                                </div>                                 
-                                <div className="cardBottom row">
-                                    <div className="card-container text-center">
-                                        <p className="description"><i>{this.state.desc ? this.state.desc : "This is where the character's description or biograpy will go. Put all pertinent information here."}</i></p>
-                                    </div>
-                                    <div className="logo-bar card-container">
-                                        {this.state.company ?
-                                        <img className="company-logo" src={logoPicker(this.state.company)} alt="Logo"/> : <div></div>}       
-                                    </div>              
-                                </div> 
-                            </div>                           
-                        </div>                                 
+                                </div>
+                            </div>                                 
+                            <div className="cardBottom row">
+                                <div className="card-container text-center">
+                                    <p className="description"><i>{this.state.desc ? this.state.desc : "This is where the character's description or biograpy will go. Put all pertinent information here."}</i></p>
+                                </div>
+                                <div className="logo-bar card-container">
+                                    {this.state.company ?
+                                    <img className="company-logo" src={logoPicker(this.state.company)} alt="Logo"/> : <div></div>}       
+                                </div>              
+                            </div> 
+                        </div>                           
+                    </div>                                 
                 </div>              
             );
         } else {
