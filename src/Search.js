@@ -21,7 +21,6 @@ class Search extends Component {
         team: '',
         ability: '',
         company: '',
-        //check this 
         searchResults: [],
         searchedOnce: false,
 
@@ -37,7 +36,7 @@ class Search extends Component {
   
     buildQuery() {
 
-        let searchQuery = 'http://localhost:8080/chars/search?';
+        let searchQuery = 'https://excelsior-api.herokuapp.com/chars/search?';
         let queryStrArr = [];
 
         if (this.state.name) {

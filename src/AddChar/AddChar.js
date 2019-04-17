@@ -39,7 +39,7 @@ class AddChar extends Component {
     }
     
         postCharacter() {
-            axios.post('http://localhost:8080/chars/create',{
+            axios.post('https://excelsior-api.herokuapp.com//chars/create',{
                 name: this.state.name,
                 civName: this.state.civName,
                 firstDebut: this.state.firstDebut,
@@ -66,13 +66,8 @@ class AddChar extends Component {
       this.postCharacter();
       this.setState({formSubmitted: true});
     }
-
-    
+   
     render() {
-
-        
-
-        
 
         function cardStylePicker(company) {
 
@@ -116,7 +111,6 @@ class AddChar extends Component {
 
         let loggedIn = localStorage.getItem("authorized");
         //console.log(`the loggedIn is ${loggedIn}`);
-        //console.log(typeof loggedIn)
 
         if (this.state.formSubmitted == true) {
             return (<Redirect to="/upload/success" />)
