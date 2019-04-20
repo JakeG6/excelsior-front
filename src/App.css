@@ -21,7 +21,7 @@
 
 .portfolioBar {
   width: 100%;
-  height: 88px;
+  height: 100px;
   display: flex;
   background-color: orange;
   align-items: center;
