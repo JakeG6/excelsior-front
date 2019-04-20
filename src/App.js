@@ -20,7 +20,6 @@ class App extends Component {
   }
 
   rememberAuthorization() {
-    
       // if the key exists in localStorage
       if (localStorage.hasOwnProperty("authorized")) {
         // get the key's value from localStorage
@@ -72,15 +71,13 @@ class App extends Component {
 
   render() {
 
-    
-
     return (
       <Router>
         <div>
           <div className="app">          
             <div className="portfolioBar">
               <div className="arrowContainer">
-                <a href="#"><i className="fas fa-arrow-left fa-3x"></i></a>
+                <a href="https://jake-guss.herokuapp.com/portfolio"><i className="fas fa-arrow-left fa-3x"></i></a>
               </div>
             </div>  
           </div>

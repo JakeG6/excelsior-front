@@ -2,8 +2,16 @@
   text-align: center;
 }
 
-.arrowContainer i {
-  margin-left: 1em;
+.arrowContainer {
+  margin-left: 80px;
+
+}
+
+.arrowContainer .fa {
+  color: seashell;
+}
+
+.arrowContainer .fa:hover {
   color: black;
 }
 
