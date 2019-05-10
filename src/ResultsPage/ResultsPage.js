@@ -12,52 +12,38 @@ import "./ResultsPage.css";
 
 class ResultsPage extends Component {
 
-    constructor(props) {
-        super(props);
-    }
+
  
     render() {
 
         function cardStylePicker(company) {
-
             switch(company.toUpperCase()) {
                 case "MARVEL":
                     return "card marvel";
-                    break;
                 case "DC":
                     return "card dc";
-                    break;
                 default:
                     return "card indy";
             }
-
         }
 
-        function logoPicker(company) {
-            
+        function logoPicker(company) { 
             switch(company.toUpperCase()) {
                 case "MARVEL":
                     return marvelLogo;
-                    break;
                 case "DC":
                     return DCLogo;
-                    break;
                 case "IMAGE":
                     return imageLogo;
-                    break;
                 case "VALIANT":
                     return valiantLogo;
-                    break;
                 case "DARK HORSE":
                     return darkHorseLogo;
-                    break;
                 case "IDW":
                     return IDWLogo;
-                    break;   
                 default:
                     return "";
-            }
-            
+            } 
         }
 
         if(this.props.searchedOnce) {

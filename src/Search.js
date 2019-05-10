@@ -23,15 +23,12 @@ class Search extends Component {
         company: '',
         searchResults: [],
         searchedOnce: false,
-
         username: '',
         password: '',
-        
         }
 
         this.handleSubmit = this.handleSubmit.bind(this);
         this.buildQuery = this.buildQuery.bind(this);
-
     }
   
     buildQuery() {
@@ -65,19 +62,12 @@ class Search extends Component {
                 searchQuery += '&';
             }
         }
-
-        //console.log(`the search query is ${searchQuery}!`);
-        //console.log(this.state.searchedOnce)
         
-        this.setState({apiURL: searchQuery},() => {
-        
+        this.setState({apiURL: searchQuery},() => {       
             axios.get(this.state.apiURL).then((response) => {
-                // handle success
-                //console.log(response);
                 this.setState({searchResults: response.data, searchedOnce: true}, () => {
                     // console.log(this.state.searchResults);
-
-                        //console.log(this.state.searchedOnce)
+                    //console.log(this.state.searchedOnce)
                 });
             } )
             .catch( (error) => {
@@ -118,14 +108,13 @@ class Search extends Component {
                         <div>
                         <Grid className="link-bar" container spacing={24} justify="flex-end">
                             <Grid item sm={1}>
-                                <Popup trigger={<Button variant="contained" color="primary">LOG IN</Button>} modal closeOnDocumentClick >
+                                <Popup trigger={<Button variant="contained" color="primary">ADMIN</Button>} modal closeOnDocumentClick >
                                 {close => (
                                     <div className="modal">
                                         <a className="close" onClick={() => {close()}}>
                                             &times;
                                         </a>
                                         <form onSubmit={() => {this.props.handleLogin(this.state.username, this.state.password)}}  >
-                                            {/* <p>{this.props.attemptMessage}</p> */}
                                             <label>
                                                 Username
                                                 <input type="text" value={this.state.username} onChange={ event => this.setState({ username: event.target.value })} />
@@ -150,7 +139,7 @@ class Search extends Component {
                     <form className="search-form" onSubmit={this.handleSubmit}>
                         <Grid container spacing={8} alignItems="center" justify="center" direction="row"> 
                             <Grid item lg={2}>
-                            <label>Name</label>
+                            <label>Character Name</label>
                                 <input  type="text" value={this.state.name} onChange={ event => this.setState({ name: event.target.value })} />
                             </Grid>
                             <Grid item lg={2}>
@@ -167,11 +156,11 @@ class Search extends Component {
                                 <input type="text" value={this.state.team} onChange={ event => this.setState({ team: event.target.value })} />
                             </Grid>
                             <Grid item lg={2}>
-                                <label>Company</label>
+                                <label>Publisher</label>
                                 <input type="text" value={this.state.company} onChange={ event => this.setState({ company: event.target.value })} />
                             </Grid>
                             <Grid item xl={2}>
-                                <input type="submit" value="SUBMIT" />
+                                <input type="submit" value="SEARCH" />
                             </Grid>
                         </Grid>
                     </form>

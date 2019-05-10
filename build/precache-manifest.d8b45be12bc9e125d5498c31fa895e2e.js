@@ -4,8 +4,8 @@ self.__precacheManifest = [
     "url": "/static/media/image-logo.86325e1e.png"
   },
   {
-    "revision": "cde3408176874e76caa1",
-    "url": "/static/css/main.d4533e7c.chunk.css"
+    "revision": "08cd6239b479dea15ca2",
+    "url": "/static/css/main.00e7cc65.chunk.css"
   },
   {
     "revision": "cb2be3a8cf2e0402a8c4",
@@ -20,8 +20,8 @@ self.__precacheManifest = [
     "url": "/static/media/DC-logo.af07e0ee.png"
   },
   {
-    "revision": "cde3408176874e76caa1",
-    "url": "/static/js/main.cde34081.chunk.js"
+    "revision": "08cd6239b479dea15ca2",
+    "url": "/static/js/main.08cd6239.chunk.js"
   },
   {
     "revision": "e951f090d79ea6c767652184700fb2d5",
@@ -40,7 +40,7 @@ self.__precacheManifest = [
     "url": "/static/media/IDW-logo.f4087a6c.png"
   },
   {
-    "revision": "d47c4a80203440fcac1a1ff5eec6cdd6",
+    "revision": "582ccd346d5dbe802a8cd2c6dc0a0cee",
     "url": "/index.html"
   }
 ];

@@ -38,27 +38,27 @@ class AddChar extends Component {
   
     }
     
-        postCharacter() {
-            axios.post('https://excelsior-api.herokuapp.com//chars/create',{
-                name: this.state.name,
-                civName: this.state.civName,
-                firstDebut: this.state.firstDebut,
-                alignment: this.state.alignment,
-                teams: this.state.teams,
-                abilities: this.state.abilities,
-                company: this.state.company,
-                imageURL: this.state.imageURL,
-                desc: this.state.desc
+    postCharacter() {
+        axios.post('https://excelsior-api.herokuapp.com/chars/create',{
+            name: this.state.name,
+            civName: this.state.civName,
+            firstDebut: this.state.firstDebut,
+            alignment: this.state.alignment,
+            teams: this.state.teams,
+            abilities: this.state.abilities,
+            company: this.state.company,
+            imageURL: this.state.imageURL,
+            desc: this.state.desc
 
-            }).then((response) => {
-                // handle success
-                //console.log(response);
-            })
-            .catch( (error) => {
-                // handle error
-                //console.log(error);
-            });            
-        }
+        }).then((response) => {
+            // handle success
+            //console.log(response);
+        })
+        .catch( (error) => {
+            // handle error
+            console.log(error);
+        });            
+    }
     
     //handle the submit using this.
     handleSubmit(event) {
@@ -235,9 +235,7 @@ class AddChar extends Component {
                 </div>              
             );
         } else {
-            //console.log(`you're being redirected the loggedIn is ${loggedIn}`)
-            return (<Redirect to="/" />) }
-  
+            return (<Redirect to="/" />) }  
     }
 }
 export default AddChar;
