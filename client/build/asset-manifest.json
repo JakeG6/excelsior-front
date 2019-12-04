@@ -1,7 +1,7 @@
 {
-  "main.css": "/static/css/main.212f752f.chunk.css",
-  "main.js": "/static/js/main.37b5a1c6.chunk.js",
-  "main.js.map": "/static/js/main.37b5a1c6.chunk.js.map",
+  "main.css": "/static/css/main.e7ec8dc2.chunk.css",
+  "main.js": "/static/js/main.76b5cd07.chunk.js",
+  "main.js.map": "/static/js/main.76b5cd07.chunk.js.map",
   "static/js/1.3643f4ab.chunk.js": "/static/js/1.3643f4ab.chunk.js",
   "static/js/1.3643f4ab.chunk.js.map": "/static/js/1.3643f4ab.chunk.js.map",
   "runtime~main.js": "/static/js/runtime~main.229c360f.js",
@@ -13,8 +13,8 @@
   "static/media/image-default.jpg": "/static/media/image-default.1d84a6d7.jpg",
   "static/media/IDW-logo.png": "/static/media/IDW-logo.f4087a6c.png",
   "static/media/shueisha-logo.png": "/static/media/shueisha-logo.6a1dc9ab.png",
-  "static/css/main.212f752f.chunk.css.map": "/static/css/main.212f752f.chunk.css.map",
+  "static/css/main.e7ec8dc2.chunk.css.map": "/static/css/main.e7ec8dc2.chunk.css.map",
   "index.html": "/index.html",
-  "precache-manifest.960d702e8832fe42313c3ffefd0d6bda.js": "/precache-manifest.960d702e8832fe42313c3ffefd0d6bda.js",
+  "precache-manifest.f75007b617aedf9120a32512429e3720.js": "/precache-manifest.f75007b617aedf9120a32512429e3720.js",
   "service-worker.js": "/service-worker.js"
 }

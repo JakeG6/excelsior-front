@@ -52,7 +52,7 @@ class AddChar extends Component {
 
         }).then((response) => {
             // handle success
-            console.log(response);
+            //console.log(response);
         })
         .catch( (error) => {
             // handle error

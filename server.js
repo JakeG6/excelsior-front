@@ -39,7 +39,7 @@ dbConnection.once('open', function() {
 
     
     // the __dirname is the current directory from where the script is running
-    app.use(favicon(__dirname + '/build/favicon.ico'));
+    app.use(favicon(__dirname + '/client/build/favicon.ico'));
     app.use(express.static(__dirname));
     app.use(express.static(path.join(__dirname, 'build')));
 
@@ -48,12 +48,9 @@ dbConnection.once('open', function() {
       return res.send('pong');
      });
 
-    //index.html 
-     app.get('/*', function (req, res) {
-       res.sendFile(path.join(__dirname, 'build', 'index.html'));
-     });
+    
 
-    //root
+    //Api root
     app.get('/api', (req, res, next) => res.send('Welcome to the API!'));
 
     //get all characters
@@ -218,6 +215,12 @@ dbConnection.once('open', function() {
             })
 
         
+    });
+
+    //index.html 
+    app.get('/*', function (req, res) {
+        //console.log(res);
+      res.sendFile(path.join(__dirname, 'client', 'build', 'index.html'));
     });
 
 });

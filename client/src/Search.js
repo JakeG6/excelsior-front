@@ -62,7 +62,7 @@ class Search extends Component {
                 searchQuery += '&';
             }
         }
-        console.log(searchQuery);
+        //console.log(searchQuery);
         
         this.setState({apiURL: searchQuery},() => {       
             axios.get(this.state.apiURL).then((response) => {
@@ -71,12 +71,12 @@ class Search extends Component {
                     console.log(this.state.searchResults);
                     console.log(this.state.searchedOnce);
                 });
-            } )
-            .catch( (error) => {
+            })
+            .catch((error) => {
                 // handle error
                 console.log(error);
             })
-            .then( () =>  {
+            .then(() =>  {
                 // always executed
                 // console.log('good search');
             });
