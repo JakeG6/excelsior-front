@@ -16,5 +16,13 @@
   "bugs": {
     "url": "https://github.com/JakeG6/excelsior-front/issues"
   },
-  "homepage": "https://github.com/JakeG6/excelsior-front#readme"
+  "homepage": "https://github.com/JakeG6/excelsior-front#readme",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^4.17.1",
+    "express-favicon": "^2.0.1",
+    "mongodb": "^3.3.5",
+    "mongoose": "^5.7.13",
+    "path": "^0.12.7"
+  }
 }
