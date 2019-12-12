@@ -72,7 +72,6 @@ dbConnection.once('open', function() {
                 if (err) {
                     res.status(404).send(err);
                 };
-                console.log('getting all the heroes.')
                 res.send(chars);
             });
         }
@@ -81,7 +80,6 @@ dbConnection.once('open', function() {
                 if (err) {
                     res.status(404).send(err);
                 };
-                console.log('getting all the villains.')
                 res.send(chars);
             });
         }
@@ -90,7 +88,6 @@ dbConnection.once('open', function() {
                 if (err) {
                     res.status(404).send(err);
                 };
-                console.log('getting all the Antiheroes.')
                 res.send(chars);
             });
         }
@@ -156,7 +153,7 @@ dbConnection.once('open', function() {
             if (err) {
                 res.status(404).send(err);
             };
-            console.log('getting the characters by search results.');
+            //console.log('getting the characters by search results.');
             res.send(chars);
         });
     });
@@ -177,7 +174,7 @@ dbConnection.once('open', function() {
                 if (err) {
                     res.status(500).send(err) 
                 };
-                console.log('trying to make new character document.');
+                //console.log('trying to make new character document.');
                 res.send(char);
             });
         
@@ -193,11 +190,11 @@ dbConnection.once('open', function() {
     app.get('/api/login', (req, res) => {
 
         // res.send('Helo')
-        console.log("Body: ", req.body)
+        //console.log("Body: ", req.body)
 
         let { username, password } = req.body
 
-            console.log("DV: ", username, password)
+            //console.log("DV: ", username, password)
             // res.send({  status: 'success' })
 
             requestPassByUserName(username)
@@ -208,7 +205,7 @@ dbConnection.once('open', function() {
                     res.send({  status: 'fail' })
                 }
             }).catch((err) => {
-                console.log("Error while login: ", err)
+                //console.log("Error while login: ", err)
                 res.send({  status: 'fail' })
             }) 
     });
