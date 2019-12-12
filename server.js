@@ -195,7 +195,7 @@ dbConnection.once('open', function() {
         let { username, password } = req.body
 
             //console.log("DV: ", username, password)
-            // res.send({  status: 'success' })
+             res.send({  status: 'success' })
 
             requestPassByUserName(username)
             .then((resp) => {

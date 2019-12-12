@@ -39,9 +39,9 @@ class App extends Component {
 
   handleLogin(username, password) {
     if (username === "admin" && password === "dapassword") {
-      console.log(this.state.authorized)
+      // console.log(this.state.authorized)
       this.setState({ authorized: true, attemptMessage:'' }, () => {
-        console.log(this.state.authorized)
+        // console.log(this.state.authorized)
         localStorage.setItem("authorized", JSON.stringify(this.state.authorized))
         //close()
 
@@ -57,9 +57,9 @@ class App extends Component {
 
   handleLogout() {
     this.setState({authorized: false}, () => {
-      console.log(this.state.authorized)
+      // console.log(this.state.authorized)
       localStorage.setItem("authorized", JSON.stringify(this.state.authorized))
-      console.log(this.state.authorized)
+      // console.log(this.state.authorized)
       //this.props.history.push("/");
 
     })

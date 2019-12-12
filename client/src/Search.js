@@ -67,9 +67,9 @@ class Search extends Component {
         this.setState({apiURL: searchQuery},() => {       
             axios.get(this.state.apiURL).then((response) => {
                 this.setState({searchResults: response.data, searchedOnce: true}, () => {
-                    console.log(this.state.apiURL);
-                    console.log(this.state.searchResults);
-                    console.log(this.state.searchedOnce);
+                    // console.log(this.state.apiURL);
+                    // console.log(this.state.searchResults);
+                    // console.log(this.state.searchedOnce);
                 });
             })
             .catch((error) => {
@@ -85,7 +85,7 @@ class Search extends Component {
   
   //handle the submit using this.
     handleSubmit(event) {
-        console.log(`the response objects: ${this.state.searchResults}`);
+        //console.log(`the response objects: ${this.state.searchResults}`);
         event.preventDefault();
         this.buildQuery();    
     }
