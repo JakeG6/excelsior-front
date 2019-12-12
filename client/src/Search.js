@@ -110,7 +110,7 @@ class Search extends Component {
                         <div>
                         <Grid className="link-bar" container spacing={24} justify="flex-end">
                             <Grid item sm={1}>
-                                <Popup trigger={<Button variant="contained" color="primary">ADMIN</Button>} modal closeOnDocumentClick >
+                                <Popup trigger={<Button className="admin-button" variant="contained" color="primary">ADMIN</Button>} modal closeOnDocumentClick >
                                 {close => (
                                     <div className="modal">
                                         <a className="close" onClick={() => {close()}}>
