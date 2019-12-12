@@ -1,0 +1,154 @@
+.admin-button {
+    margin-top: 1em !important;
+}
+
+.searchbar {
+    padding: 0 1em 1em 1em;
+    color: white;
+    background-color: #757575;
+    background-image: url("https://www.transparenttextures.com/patterns/concrete-wall-2.png");
+    -webkit-box-shadow: 2px 6px 14px 1px rgba(0,0,0,0.75);
+    -moz-box-shadow: 2px 6px 14px 1px rgba(0,0,0,0.75);
+    box-shadow: 2px 6px 14px 1px rgba(0,0,0,0.75);
+}
+
+.searchbar h1 {
+    margin: 0;
+}
+
+.searchbar h2 {
+    margin-top: 0;
+    margin-bottom: 1em;
+}
+
+.searchbar .label {
+    margin: 1em;
+}
+
+input {
+    height: 2.5em;
+    border-radius: 4px;
+    font-size: 1em;
+    background-color:lightgrey;
+    border: 3px solid transparent;
+    outline: none;
+    margin: 1em;
+}
+
+textarea {
+    margin: 1em;
+    border-radius: 4px;
+    height: 2.5em;
+    font-size: 1em;
+    background-color:lightgrey;
+    border: 3px solid transparent;
+    outline: none;
+    resize: none;
+}
+
+select {
+    padding: 16px 20px;
+    height: 3em;
+    width: 11em;
+    font-size: 1em;
+    border: none;
+    outline: none;
+    border-radius: 4px;
+    margin: 1em;
+    background-color: lightgrey;
+  }
+
+input[type = text]:focus, textarea:focus {
+    border: 3px solid #555;
+}
+
+input[type = submit] {
+    background: red;
+    width: 7em;
+    color: white;
+    cursor: pointer;
+}
+
+input[type = submit]:hover {
+    border: 3px solid #555;
+}
+
+.link-bar {
+    background-color: #757575;
+    background-image: url("https://www.transparenttextures.com/patterns/concrete-wall-2.png");
+}
+
+a {
+    text-decoration: none;
+    color:white;
+}
+
+.fa {
+    color: seashell;
+}
+
+.fa:hover {
+    color: black;
+}
+
+.logo {
+    margin-top: 1em;
+}
+
+/* Modal */
+
+.modal > .close {
+    cursor: pointer;
+    display: block;
+    padding: 2px 5px;
+    line-height: 20px;
+    font-size: 40px;
+    font-weight: bold;
+    text-align: right;
+  }
+
+  .modal {
+    color: white;
+    background-color: blue;
+    background-image: url("https://www.transparenttextures.com/patterns/concrete-wall-2.png");
+    flex-direction: column;
+  }
+
+  .modal .close {
+    cursor: pointer;
+    position: absolute;
+    display: block;
+    padding: 2px 5px;
+    line-height: 20px;
+    right: 10px;
+    top: 10px;
+    font-size: 40px;
+    border-radius: 18px;
+  
+  }
+
+  .modal .close:hover {
+    color: black;
+  }
+
+  .modal form {
+        padding-top: 1.5em;
+        font-weight: bold;
+        display: flex;
+        flex-direction: column;
+  }
+
+  .modal input {
+      margin: 1em 1em;
+  }
+
+  .modal input[type = submit] {
+      width: 17em;
+    margin: 0 auto 1em auto;  }
+
+  .modal > .actions {
+    width: 100%;
+    padding: 10px 5px;
+    margin: auto;
+    text-align: center;
+  }

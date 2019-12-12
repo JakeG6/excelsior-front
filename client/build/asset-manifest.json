@@ -1,0 +1,20 @@
+{
+  "main.css": "/static/css/main.b3738ec0.chunk.css",
+  "main.js": "/static/js/main.acfc6c85.chunk.js",
+  "main.js.map": "/static/js/main.acfc6c85.chunk.js.map",
+  "runtime~main.js": "/static/js/runtime~main.a8a9905a.js",
+  "runtime~main.js.map": "/static/js/runtime~main.a8a9905a.js.map",
+  "static/js/2.e3d6629e.chunk.js": "/static/js/2.e3d6629e.chunk.js",
+  "static/js/2.e3d6629e.chunk.js.map": "/static/js/2.e3d6629e.chunk.js.map",
+  "index.html": "/index.html",
+  "precache-manifest.bd72e63ebda10bf4e31215d4bafd48c0.js": "/precache-manifest.bd72e63ebda10bf4e31215d4bafd48c0.js",
+  "service-worker.js": "/service-worker.js",
+  "static/css/main.b3738ec0.chunk.css.map": "/static/css/main.b3738ec0.chunk.css.map",
+  "static/media/DC-logo.png": "/static/media/DC-logo.af07e0ee.png",
+  "static/media/IDW-logo.png": "/static/media/IDW-logo.f4087a6c.png",
+  "static/media/dark-horse-logo.jpg": "/static/media/dark-horse-logo.2d21b3f0.jpg",
+  "static/media/image-default.jpg": "/static/media/image-default.1d84a6d7.jpg",
+  "static/media/image-logo.png": "/static/media/image-logo.86325e1e.png",
+  "static/media/shueisha-logo.png": "/static/media/shueisha-logo.6a1dc9ab.png",
+  "static/media/valiant-logo.jpeg": "/static/media/valiant-logo.e951f090.jpeg"
+}
