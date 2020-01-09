@@ -2,9 +2,18 @@
     margin-top: 1em !important;
 }
 
+form {
+    text-align: right;
+    margin-left: 1em;
+    margin-right: 1em;
+    
+}
+
 .searchbar {
     padding: 0 1em 1em 1em;
     color: white;
+    max-width: 50em;
+    margin: 0 auto;
     background-color: #757575;
     background-image: url("https://www.transparenttextures.com/patterns/concrete-wall-2.png");
     -webkit-box-shadow: 2px 6px 14px 1px rgba(0,0,0,0.75);

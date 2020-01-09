@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { BrowserRouter as Router, Route } from "react-router-dom";
-import Search from './Search.js';
+import Search from './Search/Search.js';
 import AddChar from './AddChar/AddChar.js';
 import UploadConfirmation from './UploadConfirmation/UploadConfirmation.js';
 import './App.css';

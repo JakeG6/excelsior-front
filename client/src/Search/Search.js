@@ -1,17 +1,20 @@
 import React, { Component } from 'react';
+
+import buildQuery from "./buildQuery.js";
+
 import Button from '@material-ui/core/Button';
 import Grid from '@material-ui/core/Grid';
 
 import Popup from 'reactjs-popup';
 import { BrowserRouter as Router, Route, Link } from "react-router-dom";
-import ResultsPage from "./ResultsPage/ResultsPage.js";
+import ResultsPage from "../ResultsPage/ResultsPage.js";
 import axios from 'axios';
+
 import "./Search.css";
 
 class Search extends Component {
 
     constructor(props) {
-
         super(props);
         this.state = {
         apiURL: '',
@@ -26,50 +29,20 @@ class Search extends Component {
         username: '',
         password: '',
         }
-
         this.handleSubmit = this.handleSubmit.bind(this);
-        this.buildQuery = this.buildQuery.bind(this);
     }
   
-    buildQuery() {
-
-        let searchQuery = '/api/chars/search?';
-        let queryStrArr = [];
-
-        if (this.state.name) {
-        queryStrArr.push(`name=${this.state.name}`);
-        }
-
-        if (this.state.alignment) {
-        queryStrArr.push(`alignment=${this.state.alignment}`);
-        }
-
-        if (this.state.team) {
-        queryStrArr.push(`teams=["${this.state.team}"]`);
-        }
-
-        if (this.state.ability) {
-        queryStrArr.push(`ability=${this.state.ability}`);
-        }
-
-        if (this.state.company) {
-            queryStrArr.push(`company=${this.state.company}`);
-        }
-
-        for (let i = 0; i < queryStrArr.length; i++) {
-            searchQuery += queryStrArr[i];
-            if  (i < queryStrArr.length -1) {
-                searchQuery += '&';
-            }
-        }
-        //console.log(searchQuery);
-        
-        this.setState({apiURL: searchQuery},() => {       
+  //handle the submit using this.
+    handleSubmit(event) {
+        //console.log(`the response objects: ${this.state.searchResults}`);
+        event.preventDefault();
+        const query = buildQuery(this.state)  
+        this.setState({apiURL: query},() => {       
             axios.get(this.state.apiURL).then((response) => {
                 this.setState({searchResults: response.data, searchedOnce: true}, () => {
-                    // console.log(this.state.apiURL);
-                    // console.log(this.state.searchResults);
-                    // console.log(this.state.searchedOnce);
+                    // console.log(state.apiURL);
+                    // console.log(state.searchResults);
+                    // console.log(state.searchedOnce);
                 });
             })
             .catch((error) => {
@@ -80,14 +53,7 @@ class Search extends Component {
                 // always executed
                 // console.log('good search');
             });
-        });
-    }
-  
-  //handle the submit using this.
-    handleSubmit(event) {
-        //console.log(`the response objects: ${this.state.searchResults}`);
-        event.preventDefault();
-        this.buildQuery();    
+        });           
     }
   
     render() {
@@ -140,11 +106,11 @@ class Search extends Component {
                     </div>
                     <form className="search-form" onSubmit={this.handleSubmit}>
                         <Grid container spacing={8} alignItems="center" justify="center" direction="row"> 
-                            <Grid item lg={2}>
+                            <Grid item xs={12}>
                             <label>Character Name</label>
                                 <input  type="text" value={this.state.name} onChange={ event => this.setState({ name: event.target.value })} />
                             </Grid>
-                            <Grid item lg={2}>
+                            <Grid item xs={12}>
                                 <label>Alignment</label>
                                 <select onChange={event => this.setState({ alignment: event.target.value })}>
                                     <option value="">-</option>
@@ -153,15 +119,15 @@ class Search extends Component {
                                     <option value="Antihero">Antihero</option>
                                 </select>
                             </Grid>
-                            <Grid item lg={2}>
+                            <Grid item xs={12}>
                                 <label>Team</label>
                                 <input type="text" value={this.state.team} onChange={ event => this.setState({ team: event.target.value })} />
                             </Grid>
-                            <Grid item lg={2}>
+                            <Grid item xs={12}>
                                 <label>Publisher</label>
                                 <input type="text" value={this.state.company} onChange={ event => this.setState({ company: event.target.value })} />
                             </Grid>
-                            <Grid item xl={2}>
+                            <Grid item xs={12}>
                                 <input type="submit" value="SEARCH" />
                             </Grid>
                         </Grid>
