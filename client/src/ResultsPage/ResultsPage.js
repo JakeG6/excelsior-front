@@ -54,10 +54,10 @@ class ResultsPage extends Component {
                 return (
                     <div className="resultsPage full-area circuit-background">
                         {   
-                            this.props.searchResults.map((char) => {
+                            this.props.searchResults.map((char, idx) => {
                                 return (
-                                    <Grid container justify="center">
-                                        <Grid item lg={8}>
+                                    <Grid key={idx} container justify="center">
+                                        <Grid item lg={8} xs={12}>
                                             <div className={cardStylePicker(char.company)}>
                                                 <Grid container>
                                                     <Grid item md={6} xs={12}>
@@ -79,16 +79,16 @@ class ResultsPage extends Component {
                                                             <Grid item xs={6}>
                                                                 <h2>ABILITIES</h2>
                                                                 <ul>
-                                                                {char.abilities.map(ability => {
-                                                                    return (<li className="text-align-left word-wrap">{ability}</li>)
+                                                                {char.abilities.map((ability, idx) => {
+                                                                    return (<li key={idx} className="text-align-left word-wrap">{ability}</li>)
                                                                 })}
                                                                 </ul>
                                                             </Grid>
                                                             <Grid item xs={6}>
                                                                 <h2 className="text-align-left">TEAMS</h2>
                                                                 <ul className="team-list">
-                                                                {char.teams.map(team => {
-                                                                    return (<li className="text-align-left word-wrap">{team}</li>)
+                                                                {char.teams.map((team,idx) => {
+                                                                    return (<li key={idx} className="text-align-left word-wrap">{team}</li>)
                                                                 })}
                                                                 </ul>
                                                             </Grid>

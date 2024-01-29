@@ -64,10 +64,11 @@ class Search extends Component {
         }
         //console.log(searchQuery);
         
-        this.setState({apiURL: searchQuery},() => {       
+        this.setState({apiURL: searchQuery},() => {   
+            console.log(this.state.apiURL)    
             axios.get(this.state.apiURL).then((response) => {
                 this.setState({searchResults: response.data, searchedOnce: true}, () => {
-                    // console.log(this.state.apiURL);
+                     console.log(this.state.apiURL);
                     // console.log(this.state.searchResults);
                     // console.log(this.state.searchedOnce);
                 });

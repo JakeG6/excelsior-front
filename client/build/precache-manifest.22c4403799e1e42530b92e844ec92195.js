@@ -1,11 +1,11 @@
 self.__precacheManifest = [
   {
-    "revision": "759bac0c299b53c4915d",
-    "url": "/static/css/main.b3738ec0.chunk.css"
+    "revision": "221ae76699e32bb54fcf",
+    "url": "/static/css/main.60f35b2f.chunk.css"
   },
   {
-    "revision": "759bac0c299b53c4915d",
-    "url": "/static/js/main.e24cba86.chunk.js"
+    "revision": "221ae76699e32bb54fcf",
+    "url": "/static/js/main.5921a2a7.chunk.js"
   },
   {
     "revision": "42ac5946195a7306e2a5",
@@ -44,7 +44,7 @@ self.__precacheManifest = [
     "url": "/static/media/shueisha-logo.6a1dc9ab.png"
   },
   {
-    "revision": "6b9be59adf7eab84d26243ed6ec0bd0b",
+    "revision": "a8c05c45237e1b79356b039107e622a0",
     "url": "/index.html"
   }
 ];
