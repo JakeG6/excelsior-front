@@ -14,7 +14,7 @@
     "express": "^4.17.1",
     "express-favicon": "^2.0.1",
     "mongodb": "^3.3.5",
-    "mongoose": "^5.7.14",
+    "mongoose": "^5.13.15",
     "normalize.css": "^8.0.1",
     "path": "^0.12.7",
     "react": "^16.12.0",
